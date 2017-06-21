@@ -1,0 +1,14 @@
+echo "bash fauhdlc_bash.txt 2017 06 07. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y fauhdlc;
+
+F2_fauhdlc() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+fauhdlc --output ${OUT2}/${PATH2}/${FILE2}.txt /${PATH2}/${FILE2}.vhdl;
+cp /${PATH2}/${FILE2}.vhdl ${OUT2}/${PATH2};
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.vhdl"\>.vhdl\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.txt"\>.txt\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+PATH2="usr/share/fauhdlc";
+FILE2="std_logic_1164"; F2_fauhdlc;
+echo; echo "fauhdlc end.";

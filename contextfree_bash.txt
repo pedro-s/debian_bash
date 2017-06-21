@@ -1,0 +1,45 @@
+echo "bash contextfree_bash.txt 2017 06 07. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y contextfree;
+
+F2_cfdg() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+cfdg /${PATH2}/${FILE2}.cfdg ${OUT2}/${PATH2}/${FILE2}.png;
+cp /${PATH2}/${FILE2}.cfdg ${OUT2}/${PATH2};
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.cfdg"\>.cfdg\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.png"\>.png\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/doc/contextfree/examples";
+FILE2="aliastest"; F2_cfdg;
+FILE2="chanukah"; F2_cfdg;
+FILE2="cilia"; F2_cfdg;
+FILE2="ciliasun"; F2_cfdg;
+FILE2="demo1"; F2_cfdg;
+FILE2="demo2"; F2_cfdg;
+FILE2="funky_flower"; F2_cfdg;
+FILE2="i_curves"; F2_cfdg;
+FILE2="i_pix"; F2_cfdg;
+FILE2="i_polygons"; F2_cfdg;
+FILE2="lesson2"; F2_cfdg;
+FILE2="lesson"; F2_cfdg;
+FILE2="mtree"; F2_cfdg;
+FILE2="octopi"; F2_cfdg;
+FILE2="point"; F2_cfdg;
+FILE2="quadcity"; F2_cfdg;
+FILE2="rendering-tests"; F2_cfdg;
+FILE2="rose"; F2_cfdg;
+FILE2="sierpinski"; F2_cfdg;
+FILE2="snowflake"; F2_cfdg;
+FILE2="tangle"; F2_cfdg;
+FILE2="thingy"; F2_cfdg;
+FILE2="thorns"; F2_cfdg;
+FILE2="tree_number_5"; F2_cfdg;
+FILE2="triples"; F2_cfdg;
+FILE2="underground"; F2_cfdg;
+FILE2="weighting_demo"; F2_cfdg;
+FILE2="welcome"; F2_cfdg;
+FILE2="xmas"; F2_cfdg;
+FILE2="ziggy"; F2_cfdg;
+
+echo; echo "contextfree end.";

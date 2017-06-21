@@ -1,0 +1,27 @@
+echo "bash kdevelop_bash.txt 2017 06 07. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y c-cpp-reference gcc;
+gcc --version;
+# gcc (Debian 4.9.2-10) 4.9.2
+
+F2_gcc() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+gcc /${PATH2}/${FILE2}.c -o ${OUT2}/${PATH2}/${FILE2}.exe;
+cp /${PATH2}/${FILE2}.c ${OUT2}/${PATH2};
+${OUT2}/${PATH2}/${FILE2}.exe > ${OUT2}/${PATH2}/${FILE2}.txt;
+rm -r ${OUT2}/${PATH2}/${FILE2}.exe;
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.c"\>.c\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.txt"\>.txt\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/doc/kde/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C";
+FILE2="01_1"; F2_gcc;
+FILE2="01_2"; F2_gcc;
+FILE2="02_1"; F2_gcc;
+FILE2="03_3"; F2_gcc;
+FILE2="03_4"; F2_gcc;
+FILE2="04_1"; F2_gcc;
+FILE2="04_2"; F2_gcc;
+FILE2="04_3"; F2_gcc;
+
+echo; echo "kdevelop end.";

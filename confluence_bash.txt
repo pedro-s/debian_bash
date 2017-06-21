@@ -1,0 +1,25 @@
+echo "bash confluence_bash.txt 2017 06 07. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y confluence;
+
+F2_cf() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+cf -o ${OUT2}/${PATH2}/${FILE2}.txt /${PATH2}/${FILE2}.cf;
+cp /${PATH2}/${FILE2}.cf ${OUT2}/${PATH2};
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.cf"\>.cf\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.txt"\>.txt\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/confluence";
+FILE2="base"; F2_cf;
+FILE2="list"; F2_cf;
+
+PATH2="usr/share/confluence/base_test";
+FILE2="base_test"; F2_cf;
+
+PATH2="usr/share/confluence/common";
+FILE2="common"; F2_cf;
+FILE2="sync"; F2_cf;
+FILE2="unit_test"; F2_cf;
+
+echo; echo "confluence end.";

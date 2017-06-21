@@ -1,0 +1,586 @@
+echo "bash povray_bash.txt 2017 06 08. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+# su; apt-get install --allow-unauthenticated -y povray povray-examples mjpegtools ffmpeg2theora;
+
+echo "copy user configuration file"; mkdir -p .povray/3.7/; cp /etc/povray/3.7/povray.conf .povray/3.7/povray.conf;
+
+echo "still png";
+F2_povray() { echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2}/;
+povray +I/${PATH2}/${FILE2}.pov +O${OUT2}/${PATH2}/${FILE2}.png +L/${PATH2}/ +GI${OUT2}/${PATH2}/${FILE2}.GI;
+cp /${PATH2}/${FILE2}.pov ${OUT2}/${PATH2}/;
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.pov"\>.pov\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.GI"\>.GI\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.png"\>.png\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+echo "animation ogv";
+F3_povray() { echo; echo /${PATH2}/${FILE2}; echo /${PATH2}/${FILE2} >> ${OUT2}/${PATH2}/echo.txt; mkdir -p ${OUT2}/${PATH2}/;
+povray +I/${PATH2}/${FILE2}.pov +O${OUT2}/${PATH2}/${FILE2}.png +L/${PATH2}/ +GI${OUT2}/${PATH2}/${FILE2}.GI /${PATH2}/${FILE2}.ini;
+png2yuv -I p -f 25 -j ${OUT2}/${PATH2}/${FILE2}%02d.png -b 1 > ${OUT2}/${PATH2}/${FILE2}.yuv;
+ffmpeg2theora --optimize --videoquality 10 --videobitrate 16778 --title ${FILE2} -o ${OUT2}/${PATH2}/${FILE2}.ogv ${OUT2}/${PATH2}/${FILE2}.yuv;
+cp /${PATH2}/${FILE2}.pov ${OUT2}/${PATH2}/;
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.pov"\>.pov\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.GI"\>.GI\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.ovg"\>.ovg\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="abyss"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/balcony";
+FILE2="balcony"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/benchmark";
+FILE2="benchmark"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="biscuit"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/blocks";
+FILE2="stackerday";  F2_povray;
+FILE2="stackergold";  F2_povray;
+FILE2="stackernight";  F2_povray;
+FILE2="stackertransp"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="bwstripe"; F2_povray;
+FILE2="chess2"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/cliche";
+FILE2="cliche";  F2_povray;
+FILE2="sign"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/crater";
+FILE2="crater";  F2_povray;
+FILE2="crater_dat";  F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/desk";
+FILE2="desk"; F2_povray;
+
+echo "this takes a long time to render.";
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="diffract"; F2_povray;
+FILE2="diffuse_back"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/drums2";
+FILE2="drums"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="float5"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/glasschess";
+FILE2="glasschess"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/grenadine";
+FILE2="grenadine"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="infinitybox";  F2_povray;
+FILE2="isocacti";  F2_povray;
+FILE2="lamppost";  F2_povray;
+FILE2="landscape";  F2_povray;
+FILE2="mediasky";  F2_povray;
+FILE2="mist";  F2_povray;
+FILE2="mtmand"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/ntreal";
+FILE2="ntreal"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="object_pattern";  F2_povray;
+FILE2="optics";  F2_povray;
+FILE2="pawns";  F2_povray;
+FILE2="quilt1";  F2_povray;
+FILE2="sombrero";  F2_povray;
+FILE2="sunsethf";  F2_povray;
+FILE2="swirlbox"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced/teapot";
+FILE2="teapot";  F2_povray;
+FILE2="teapot2";  F2_povray;
+FILE2="teapot3";  F2_povray;
+FILE2="teapot4"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/advanced";
+FILE2="wallstucco";  F2_povray;
+FILE2="whiltile";  F2_povray;
+FILE2="wineglass"; F2_povray;
+FILE2="woodbox"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/ambient";
+FILE2="ambient"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/camera2";
+FILE2="camera2"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/clockd";
+FILE2="clockd"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/diffuse";
+FILE2="diffuse"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/float1";
+FILE2="float1"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/float2";
+FILE2="float2"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/float3";
+FILE2="float3"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/float4";
+FILE2="float4"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/fractalzoom";
+FILE2="fractalzoom"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/l_o";
+FILE2="l_o"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/quilted";
+FILE2="plotqlt"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/raddem";
+FILE2="raddem"; F3_povray;
+
+# echo "reflection does not make png file.";
+# PATH2="usr/share/doc/povray/examples/animations/reflection";
+# FILE2="reflection"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/speclr";
+FILE2="speclr"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/splinefollow";
+FILE2="splinefollow"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/vect1";
+FILE2="vect1"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/animations/vect2";
+FILE2="vect2"; F3_povray;
+
+PATH2="usr/share/doc/povray/examples/bsp";
+FILE2="Tango"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/camera";
+FILE2="cylinder1"; F2_povray;
+FILE2="cylinder2"; F2_povray;
+FILE2="cylinder3"; F2_povray;
+FILE2="cylinder4"; F2_povray;
+FILE2="fisheye"; F2_povray;
+FILE2="focalblur"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/camera/mesh_camera";
+FILE2="baking_demo"; F2_povray;
+FILE2="baking_repair_seams"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/camera/mesh_camera/ess";
+FILE2="ess-ortho-camera"; F2_povray;
+FILE2="ess-persp-camera"; F2_povray;
+FILE2="ortho-camera"; F2_povray;
+FILE2="persp-camera"; F2_povray;
+
+# echo "these create files *.inc in home folder.";
+# PATH2="usr/share/doc/povray/examples/camera/mesh_camera";
+# FILE2="meshcam_ortho_demo"; F2_povray;
+# FILE2="meshcam_ortho_demo_uv"; F2_povray;
+# FILE2="meshcam_persp_compare"; F2_povray;
+# FILE2="meshcam_persp_demo"; F2_povray;
+# FILE2="meshcam_persp_demo_uv"; F2_povray;
+# FILE2="meshcam_stereo_demo"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/camera";
+FILE2="normal"; F2_povray;
+FILE2="omnimax"; F2_povray;
+FILE2="orthographic"; F2_povray;
+FILE2="panoramic"; F2_povray;
+FILE2="perspective"; F2_povray;
+FILE2="shear"; F2_povray;
+FILE2="spherical"; F2_povray;
+FILE2="ultra_wide_angle"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/gamma";
+FILE2="gamma_showcase"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo";
+FILE2="chars"; F2_povray;
+FILE2="circletext"; F2_povray;
+FILE2="colors"; F2_povray;
+FILE2="debug"; F2_povray;
+FILE2="finish"; F2_povray;
+FILE2="func_gradient"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo/glasses";
+FILE2="glass"; F2_povray;
+FILE2="samp_demo"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo";
+FILE2="i_internal"; F2_povray;
+FILE2="logo"; F2_povray;
+FILE2="math"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo/metals";
+FILE2="brasses"; F2_povray;
+FILE2="chromes"; F2_povray;
+FILE2="coppers"; F2_povray;
+FILE2="golds"; F2_povray;
+FILE2="silvers"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo";
+FILE2="screen"; F2_povray;
+FILE2="shapes"; F2_povray;
+FILE2="shapes2"; F2_povray;
+FILE2="shapes_old"; F2_povray;
+FILE2="sort"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo/stones";
+FILE2="benediti"; F2_povray;
+FILE2="marbteal"; F2_povray;
+FILE2="pinkmarb"; F2_povray;
+FILE2="rdgranit"; F2_povray;
+FILE2="stones1"; F2_povray;
+FILE2="stones2"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo";
+FILE2="strings"; F2_povray;
+FILE2="sundial"; F2_povray;
+FILE2="texture1"; F2_povray;
+FILE2="texture2"; F2_povray;
+FILE2="texture3"; F2_povray;
+FILE2="transforms"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/incdemo/woods";
+FILE2="ash"; F2_povray;
+FILE2="ash_37"; F2_povray;
+FILE2="benediti_37"; F2_povray;
+FILE2="bubinga"; F2_povray;
+FILE2="bubinga_37"; F2_povray;
+FILE2="cedar"; F2_povray;
+FILE2="cedar_37"; F2_povray;
+FILE2="orngwood"; F2_povray;
+FILE2="teak"; F2_povray;
+FILE2="teak_37"; F2_povray;
+FILE2="whiteash"; F2_povray;
+FILE2="whiteash_37"; F2_povray;
+FILE2="wood_1"; F2_povray;
+FILE2="wood_10"; F2_povray;
+FILE2="wood_11"; F2_povray;
+FILE2="wood_12"; F2_povray;
+FILE2="wood_13"; F2_povray;
+FILE2="wood_14"; F2_povray;
+FILE2="wood_15"; F2_povray;
+FILE2="wood_16"; F2_povray;
+FILE2="wood_17"; F2_povray;
+FILE2="wood_18"; F2_povray;
+FILE2="wood_19"; F2_povray;
+FILE2="wood_2"; F2_povray;
+FILE2="wood_3"; F2_povray;
+FILE2="wood_4"; F2_povray;
+FILE2="wood_5"; F2_povray;
+FILE2="wood_6"; F2_povray;
+FILE2="wood_7"; F2_povray;
+FILE2="wood_8"; F2_povray;
+FILE2="wood_9"; F2_povray;
+FILE2="woods1"; F2_povray;
+FILE2="woods2"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/interior";
+FILE2="atten1"; F2_povray;
+FILE2="atten2"; F2_povray;
+FILE2="ballbox1"; F2_povray;
+FILE2="caustic2"; F2_povray;
+FILE2="crystal"; F2_povray;
+FILE2="fog_f"; F2_povray;
+FILE2="fog_ft"; F2_povray;
+FILE2="fog_std"; F2_povray;
+FILE2="foglayr"; F2_povray;
+FILE2="foglyr2"; F2_povray;
+FILE2="iortest"; F2_povray;
+FILE2="magglass"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/interior/media";
+FILE2="galaxy"; F2_povray;
+FILE2="hollow1"; F2_povray;
+FILE2="hollow2"; F2_povray;
+FILE2="hollow3"; F2_povray;
+FILE2="media1"; F2_povray;
+FILE2="media2"; F2_povray;
+FILE2="media3"; F2_povray;
+FILE2="media4"; F2_povray;
+FILE2="media5"; F2_povray;
+FILE2="micro"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/interior";
+FILE2="nufog2"; F2_povray;
+FILE2="rainbow1"; F2_povray;
+FILE2="skysph1"; F2_povray;
+FILE2="skysph2"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/language/arrays";
+FILE2="array1"; F2_povray;
+FILE2="array2"; F2_povray;
+FILE2="array3"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/language";
+FILE2="bounding"; F2_povray;
+
+# echo "fileio creates FILEIO.TXT in home directory.";
+# PATH2="usr/share/doc/povray/examples/language/fileio";
+# FILE2="fileio"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/language";
+FILE2="image_size"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/language/macros";
+FILE2="local";
+FILE2="macro1";
+FILE2="macro2";
+FILE2="macro3";
+FILE2="macro4";
+
+PATH2="usr/share/doc/povray/examples/language";
+FILE2="splinefunction";
+FILE2="trace-wicker";
+FILE2="trace";
+FILE2="trace2";
+FILE2="tracevines";
+FILE2="vturbulence";
+
+PATH2="usr/share/doc/povray/examples/lights";
+FILE2="arealit1"; F2_povray;
+FILE2="arealit2"; F2_povray;
+FILE2="arealit3"; F2_povray;
+FILE2="circular"; F2_povray;
+FILE2="fillite"; F2_povray;
+FILE2="glassthing"; F2_povray;
+FILE2="laser"; F2_povray;
+FILE2="orient"; F2_povray;
+FILE2="parallel_lights"; F2_povray;
+FILE2="phot_met_glass"; F2_povray;
+FILE2="projected_through"; F2_povray;
+FILE2="shadows"; F2_povray;
+FILE2="soft"; F2_povray;
+FILE2="spotlite"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objectmods";
+FILE2="double_illuminate"; F2_povray;
+FILE2="no_image"; F2_povray;
+FILE2="no_reflection"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objects";
+FILE2="bezier"; F2_povray;
+FILE2="blob"; F2_povray;
+FILE2="blob1a"; F2_povray;
+FILE2="blob1b"; F2_povray;
+FILE2="blob1c"; F2_povray;
+FILE2="chesmsh"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objects/csg";
+FILE2="cliptst2"; F2_povray;
+FILE2="granite"; F2_povray;
+FILE2="hfclip"; F2_povray;
+FILE2="intee1"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objects";
+FILE2="fractal1"; F2_povray;
+FILE2="fractal2"; F2_povray;
+FILE2="fractal3"; F2_povray;
+FILE2="fractal4"; F2_povray;
+FILE2="isosurfaces"; F2_povray;
+FILE2="lathe1a"; F2_povray;
+FILE2="lathe1b"; F2_povray;
+FILE2="lathe1c"; F2_povray;
+FILE2="lathe2"; F2_povray;
+FILE2="mesh2"; F2_povray;
+FILE2="polygon"; F2_povray;
+FILE2="primitiv"; F2_povray;
+FILE2="prism1"; F2_povray;
+FILE2="prism2"; F2_povray;
+FILE2="prism3a"; F2_povray;
+FILE2="prism3b"; F2_povray;
+FILE2="prism3c"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objects/quartic";
+FILE2="bicube"; F2_povray;
+FILE2="folium"; F2_povray;
+FILE2="grafbic"; F2_povray;
+FILE2="helix"; F2_povray;
+FILE2="hyptorus"; F2_povray;
+FILE2="lemnisc2"; F2_povray;
+FILE2="lemnisca"; F2_povray;
+FILE2="monkey"; F2_povray;
+FILE2="partorus"; F2_povray;
+FILE2="piriform"; F2_povray;
+FILE2="quarcyl"; F2_povray;
+FILE2="quarpara"; F2_povray;
+FILE2="steiner"; F2_povray;
+FILE2="tcubic"; F2_povray;
+FILE2="teardrop"; F2_povray;
+FILE2="torus"; F2_povray;
+FILE2="trough"; F2_povray;
+FILE2="witch"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/objects";
+FILE2="sor1"; F2_povray;
+FILE2="superel1"; F2_povray;
+FILE2="superel2"; F2_povray;
+FILE2="superel3"; F2_povray;
+FILE2="torus1"; F2_povray;
+FILE2="ttf1"; F2_povray;
+FILE2="wtorus"; F2_povray;
+
+# echo "portfoilo creates html files in home directory.";
+# PATH2="usr/share/doc/povray/examples/portfolio";
+# FILE2="__empty"; F2_povray;
+# FILE2="allnormals"; F2_povray;
+# FILE2="allobjects"; F2_povray;
+# FILE2="allpat1iso"; F2_povray;
+# FILE2="allpat2iso"; F2_povray;
+# FILE2="allpatterns"; F2_povray;
+# FILE2="c_colors"; F2_povray;
+# FILE2="f_finish"; F2_povray;
+# FILE2="m_textures"; F2_povray;
+# FILE2="o_2shapes"; F2_povray;
+# FILE2="o_shapes"; F2_povray;
+# FILE2="o_shapes_old"; F2_povray;
+# FILE2="o_shapesq"; F2_povray;
+# FILE2="p_skies"; F2_povray;
+# FILE2="p_textures"; F2_povray;
+# FILE2="p_woods"; F2_povray;
+# FILE2="t_1stones"; F2_povray;
+# FILE2="t_2stones"; F2_povray;
+# FILE2="t_metals"; F2_povray;
+# FILE2="t_stars"; F2_povray;
+# FILE2="t_textures"; F2_povray;
+# FILE2="t_woods"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/qtvr";
+FILE2="qtvrpanorama"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/radiosity";
+FILE2="cornell"; F2_povray;
+FILE2="patio-radio_36"; F2_povray;
+FILE2="patio-radio_37"; F2_povray;
+FILE2="rad_def_test_36"; F2_povray;
+FILE2="rad_def_test_37"; F2_povray;
+FILE2="radiosity2"; F2_povray;
+FILE2="radiosity3"; F2_povray;
+FILE2="radiosity_36"; F2_povray;
+FILE2="radiosity_37"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/subsurface";
+FILE2="subsurface"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/templates/Basic_Scenes";
+FILE2="Checkered_plane"; F2_povray;
+FILE2="DarkBlueSky_Axes"; F2_povray;
+FILE2="Desert_blue_sky"; F2_povray;
+FILE2="Grass_partly_cloudy_sky"; F2_povray;
+FILE2="Grass_small_clouds"; F2_povray;
+FILE2="Night_moon_partly_cloudy"; F2_povray;
+FILE2="Orthographic_isometric"; F2_povray;
+FILE2="Orthographic_scene"; F2_povray;
+FILE2="Rainy_S_Cloud4"; F2_povray;
+FILE2="Sea_blue_sky"; F2_povray;
+FILE2="Sea_moon_partly_cloudy"; F2_povray;
+FILE2="Sea_partly_cloudy_sky"; F2_povray;
+FILE2="Sea_small_clouds_in_sky"; F2_povray;
+FILE2="Squared_XY_righthand_z_up"; F2_povray;
+FILE2="Squared_XZ_righthand_y_up"; F2_povray;
+FILE2="Squared_plane_XY_2D"; F2_povray;
+FILE2="Squared_plane_XZ_3D_dark"; F2_povray;
+FILE2="Squared_plane_XZ_3D_far"; F2_povray;
+FILE2="Squared_plane_XZ_3D_near"; F2_povray;
+FILE2="White_sands_blue_sky"; F2_povray;
+FILE2="pure_white_background"; F2_povray;
+FILE2="starfield"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/finishes";
+FILE2="arches"; F2_povray;
+FILE2="cluster"; F2_povray;
+FILE2="metallicreflection"; F2_povray;
+FILE2="var_refl"; F2_povray;
+FILE2="var_reflection"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures";
+FILE2="interior_texture"; F2_povray;
+FILE2="noise_generator"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/normals";
+FILE2="bumpmap"; F2_povray;
+FILE2="norm_acc"; F2_povray;
+FILE2="normal"; F2_povray;
+FILE2="normavg"; F2_povray;
+FILE2="normmap"; F2_povray;
+FILE2="slopemap"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/patterns";
+FILE2="agate"; F2_povray;
+FILE2="bozo"; F2_povray;
+FILE2="brick"; F2_povray;
+FILE2="bumps"; F2_povray;
+FILE2="crackle1"; F2_povray;
+FILE2="crackle2"; F2_povray;
+FILE2="crackle3"; F2_povray;
+FILE2="crackle_form"; F2_povray;
+FILE2="crackle_solid"; F2_povray;
+FILE2="densfile"; F2_povray;
+FILE2="dents"; F2_povray;
+FILE2="fractals1"; F2_povray;
+FILE2="fractals2"; F2_povray;
+FILE2="fractals3"; F2_povray;
+FILE2="gradient"; F2_povray;
+FILE2="granite"; F2_povray;
+FILE2="hexagon"; F2_povray;
+FILE2="leopard"; F2_povray;
+FILE2="mandel"; F2_povray;
+FILE2="marble"; F2_povray;
+FILE2="onion"; F2_povray;
+FILE2="pigment_pattern"; F2_povray;
+FILE2="quilt2"; F2_povray;
+FILE2="quilted"; F2_povray;
+FILE2="radial"; F2_povray;
+FILE2="ripples"; F2_povray;
+FILE2="slopemt_36"; F2_povray;
+FILE2="slopemt_37"; F2_povray;
+FILE2="slopemt_dat_36"; F2_povray;
+FILE2="slopemt_dat_37"; F2_povray;
+FILE2="spiral1"; F2_povray;
+FILE2="spiral2"; F2_povray;
+FILE2="spotted"; F2_povray;
+FILE2="tiling"; F2_povray;
+FILE2="waves"; F2_povray;
+FILE2="wrinkles"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/pigments";
+FILE2="blkhole"; F2_povray;
+FILE2="cantelop"; F2_povray;
+FILE2="checker2"; F2_povray;
+FILE2="crack1"; F2_povray;
+FILE2="dodec2"; F2_povray;
+FILE2="filtfun"; F2_povray;
+FILE2="interp"; F2_povray;
+FILE2="irid"; F2_povray;
+FILE2="mapper"; F2_povray;
+FILE2="mappr2"; F2_povray;
+FILE2="matmap"; F2_povray;
+FILE2="pigmap"; F2_povray;
+FILE2="pigment"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/pigments/skies";
+FILE2="s_cloud1"; F2_povray;
+FILE2="s_cloud2"; F2_povray;
+FILE2="s_cloud3"; F2_povray;
+FILE2="s_cloud4"; F2_povray;
+FILE2="s_cloud5"; F2_povray;
+FILE2="stars"; F2_povray;
+
+PATH2="usr/share/doc/povray/examples/textures/pigments";
+FILE2="spiral1a"; F2_povray;
+FILE2="transmitfx"; F2_povray;
+FILE2="txtravg"; F2_povray;
+FILE2="txtrmap"; F2_povray;
+FILE2="warp1"; F2_povray;
+FILE2="warp2"; F2_povray;
+
+echo "remove extra files.";
+rm -r .povray/;
+rm Computer/usr/share/doc/povray/examples/animations/*/*.png;
+rm Computer/usr/share/doc/povray/examples/animations/*/*.yuv;
+
+echo; echo "povray end.";
