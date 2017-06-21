@@ -1,0 +1,137 @@
+echo "bash ats_bash.txt 2017 06 07 This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# apt-get install --allow-unauthenticated -y ats-lang-anairiats ats-lang-anairiats-examples;
+atscc --version;
+# ATS/Anairiats version 0.2.11 with Copyright (c) 2002-2013 Hongwei Xi
+# gcc (Debian 4.9.2-10) 4.9.2
+
+F2_atscc() { 
+echo; echo "source file extension= .dats";
+echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+atscc /${PATH2}/${FILE2}.dats -o ${OUT2}/${PATH2}/${FILE2}.exe;
+cp ${FILE2}_dats.c ${OUT2}/${PATH2}; rm ${FILE2}_dats.c;
+cp /${PATH2}/${FILE2}.dats ${OUT2}/${PATH2}; }
+
+F3_atscc() { 
+echo; echo "source file extension= .gz";
+echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+cp /${PATH2}/${FILE2}.dats.gz ${OUT2}/${PATH2}; gzip -d ${OUT2}/${PATH2}/${FILE2}.dats.gz;
+atscc ${OUT2}/${PATH2}/${FILE2}.dats -o ${OUT2}/${PATH2}/${FILE2}.exe;
+cp ${FILE2}_dats.c ${OUT2}/${PATH2}; rm ${FILE2}_dats.c; }
+
+F4_atscc() {
+echo "Create text file. Add everything to index. Remove extra files."
+${OUT2}/${PATH2}/${FILE2}.exe > ${OUT2}/${PATH2}/${FILE2}.txt;
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.dats"\>.dats\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}_dats.c"\>_dats.c\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.txt"\>.txt\</a\>\<br\> >> ${OUT2}/${OUT2}.htm;
+rm -r ${OUT2}/${PATH2}/${FILE2}.exe; }
+
+F5_atscc() { 
+echo; echo "special arguments.";
+mkdir -p ${OUT2}/${PATH2}; 
+atscc -D_ATS_MULTITHREAD /${PATH2}/${FILE2}.dats -pthread -o ${OUT2}/${PATH2}/${FILE2}.exe;
+cp ${FILE2}_dats.c ${OUT2}/${PATH2}; rm ${FILE2}_dats.c;
+cp /${PATH2}/${FILE2}.dats ${OUT2}/${PATH2}; }
+
+OUT2="Computer";
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/AUP";
+FILE2="AUP_3_4"; F2_atscc; F4_atscc;
+FILE2="AUP_3_6_4"; F3_atscc; F4_atscc;
+FILE2="AUP_4_7"; F2_atscc; F4_atscc;
+FILE2="AUP_5_11"; F2_atscc; F4_atscc;
+FILE2="AUP_5_15"; F2_atscc; F4_atscc;
+FILE2="AUP_5_17_3"; F5_atscc; F4_atscc;
+FILE2="AUP_5_2"; F2_atscc; F4_atscc; 
+FILE2="AUP_8_1_4"; F2_atscc; F4_atscc; 
+FILE2="AUP_8_3"; F3_atscc; F4_atscc;
+FILE2="AUP_9_2_3"; F3_atscc; F4_atscc;
+FILE2="AUP_9_7_1"; F2_atscc; F4_atscc;
+FILE2="AUP_9_7_2"; F2_atscc; F4_atscc;
+FILE2="AUP_9_7_5"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/INTRO";
+FILE2="HelloWorld"; F2_atscc; F4_atscc;
+FILE2="fact4"; F2_atscc; F4_atscc;
+FILE2="revarr"; F2_atscc; F4_atscc;
+FILE2="tally"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/KernighanRitchie/Chapter01";
+FILE2="fahrenheit_celsius"; F2_atscc; F4_atscc;
+FILE2="hello"; F2_atscc; F4_atscc;
+FILE2="power"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/KernighanRitchie/Chapter02";
+FILE2="rand"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/KernighanRitchie/Chapter03";
+FILE2="reverse"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/KernighanRitchie/Chapter04";
+FILE2="qsort"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/MISC";
+FILE2="GarsiaWachs"; F3_atscc; F4_atscc;
+FILE2="GaussElim"; F3_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/MISC";
+FILE2="Peano"; F2_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/MISC";
+FILE2="coin_flip"; F2_atscc; F4_atscc;
+FILE2="hamming_lazy"; F2_atscc; F4_atscc;
+FILE2="hanoi"; F2_atscc; F4_atscc;
+FILE2="isqrt"; F2_atscc; F4_atscc;
+FILE2="kmp"; F3_atscc; F4_atscc;
+FILE2="myfind"; F2_atscc; F4_atscc;
+FILE2="passwdgen"; F2_atscc; F4_atscc;
+FILE2="permute"; F2_atscc; F4_atscc;
+FILE2="permute_vt"; F2_atscc; F4_atscc;
+FILE2="pi_lazy"; F2_atscc; F4_atscc;
+FILE2="quicksort1_list"; F3_atscc; F4_atscc;
+FILE2="quicksort2_list"; F3_atscc; F4_atscc;
+FILE2="quicksort_list"; F3_atscc; F4_atscc;
+FILE2="strmat"; F3_atscc; F4_atscc;
+FILE2="sumup"; F2_atscc; F4_atscc;
+FILE2="systemf_programming_examples"; F3_atscc; F4_atscc;
+
+PATH2="usr/share/doc/ats-lang-anairiats-examples/examples/TEST";
+FILE2="libats_funarray_braun"; F2_atscc; F4_atscc;
+FILE2="libats_fundeque_fingertree"; F2_atscc; F4_atscc;
+FILE2="libats_funheap_binomial"; F2_atscc; F4_atscc;
+FILE2="libats_funheap_braun"; F2_atscc; F4_atscc;
+FILE2="libats_funralist_nested"; F2_atscc; F4_atscc;
+FILE2="libats_genarrays"; F2_atscc; F4_atscc;
+FILE2="libats_iterint"; F3_atscc; F4_atscc;
+FILE2="libats_linbitvec"; F2_atscc; F4_atscc;
+FILE2="libats_linheap_binomial"; F2_atscc; F4_atscc;
+FILE2="libats_linqueue_arr"; F2_atscc; F4_atscc;
+FILE2="libats_linqueue_lst"; F2_atscc; F4_atscc;
+FILE2="libats_linstack_arr"; F2_atscc; F4_atscc;
+FILE2="libats_ngc_dlist"; F3_atscc; F4_atscc;
+FILE2="libats_ngc_slist"; F2_atscc; F4_atscc;
+FILE2="libats_rarray"; F2_atscc; F4_atscc;
+FILE2="libats_refcount"; F2_atscc; F4_atscc;
+FILE2="libats_vector"; F2_atscc; F4_atscc;
+FILE2="libc_printf"; F2_atscc; F4_atscc;
+FILE2="libc_pwd"; F2_atscc; F4_atscc;
+FILE2="libc_random"; F2_atscc; F4_atscc;
+FILE2="libc_stdio"; F2_atscc; F4_atscc;
+FILE2="libc_stdlib"; F2_atscc; F4_atscc;
+FILE2="libc_sys_utsname"; F2_atscc; F4_atscc;
+FILE2="libc_unistd"; F2_atscc; F4_atscc;
+FILE2="prelude_array"; F2_atscc; F4_atscc;
+FILE2="prelude_array0"; F2_atscc; F4_atscc;
+FILE2="prelude_bool"; F2_atscc; F4_atscc;
+FILE2="prelude_char"; F2_atscc; F4_atscc;
+FILE2="prelude_float"; F2_atscc; F4_atscc;
+FILE2="prelude_integer"; F2_atscc; F4_atscc;
+FILE2="prelude_lazy_vt"; F2_atscc; F4_atscc;
+FILE2="prelude_list"; F3_atscc; F4_atscc;
+FILE2="prelude_list_vt"; F2_atscc; F4_atscc;
+FILE2="prelude_matrix"; F2_atscc; F4_atscc;
+FILE2="prelude_matrix0"; F2_atscc; F4_atscc;
+FILE2="prelude_string"; F3_atscc; F4_atscc;
+
+
+
+echo; echo "atscc end.";

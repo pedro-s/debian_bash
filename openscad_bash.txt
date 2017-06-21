@@ -1,0 +1,42 @@
+echo "bash openscad_bash.txt 2017 06 07. This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y openscad;
+openscad -v;
+# OpenSCAD version 2014.03
+
+F2_openscad() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+openscad -o ${OUT2}/${PATH2}/${FILE2}.stl /${PATH2}/${FILE2}.scad;
+openscad -o ${OUT2}/${PATH2}/${FILE2}.png /${PATH2}/${FILE2}.scad;
+cp /${PATH2}/${FILE2}.scad ${OUT2}/${PATH2};
+echo /${PATH2}/${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.scad"\>.scad\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.stl"\>.stl\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.png"\>.png\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/openscad/examples";
+FILE2="example001"; F2_openscad;
+FILE2="example002"; F2_openscad;
+FILE2="example003"; F2_openscad;
+FILE2="example004"; F2_openscad;
+FILE2="example005"; F2_openscad;
+FILE2="example006"; F2_openscad;
+FILE2="example007"; F2_openscad;
+FILE2="example008"; F2_openscad;
+FILE2="example009"; F2_openscad;
+FILE2="example010"; F2_openscad;
+FILE2="example011"; F2_openscad;
+FILE2="example012"; F2_openscad;
+FILE2="example013"; F2_openscad;
+FILE2="example014"; F2_openscad;
+FILE2="example015"; F2_openscad;
+FILE2="example016"; F2_openscad;
+FILE2="example017"; F2_openscad;
+FILE2="example018"; F2_openscad;
+FILE2="example019"; F2_openscad;
+FILE2="example020"; F2_openscad;
+FILE2="example021"; F2_openscad;
+FILE2="example022"; F2_openscad;
+FILE2="example023"; F2_openscad;
+FILE2="example024"; F2_openscad;
+
+echo; echo "end openscad.";

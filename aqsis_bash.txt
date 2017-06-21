@@ -1,0 +1,37 @@
+echo "bash aqsis_bash.txt 2017 06 07 This bash script runs some example script that is in the Debian 8.5 main software repository.";
+
+# su; apt-get install --allow-unauthenticated -y aqsis aqsis-examples libaqsis1 libcanberra-gtk-module libcanberra-gtk-module-dbg;
+
+aqsis -version;
+# aqsis version 1.8.2 (revision 0) compiled Jun 25 2014 19:51:30
+
+F2_aqsis() { 
+echo; echo /${PATH2}/${FILE2}; mkdir -p ${OUT2}/${PATH2};
+aqsis /${PATH2}/${FILE2}.rib; cp ${FILE2}.tif ${OUT2}/${PATH2}; rm ${FILE2}.tif;
+cp /${PATH2}/${FILE2}.rib ${OUT2}/${PATH2};
+echo ${FILE2}\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.rib"\>.rib\</a\>\&nbsp\&nbsp\&nbsp\&nbsp\<a href="${PATH2}/${FILE2}.tif"\>.tif\</a\>\<br\> >> ${OUT2}/${OUT2}.htm; }
+
+OUT2="Computer";
+
+PATH2="usr/share/aqsis/examples/features/curves"; FILE2="bezier"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/features/levelofdetail"; FILE2="detail"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/features/motionblur"; FILE2="camera"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/features/objectinstance"; FILE2="singlepolygon"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/features/shadows"; FILE2="softshadow"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/features/subdivision"; FILE2="creases"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/scenes/microbe"; FILE2="microbe"; F2_aqsis;
+PATH2="usr/share/aqsis/examples/scenes/vase"; FILE2="vase"; F2_aqsis;
+
+echo "bash bike.txt";
+cp /usr/share/aqsis/examples/features/archives/bikeData.rib.gz ${HOME}/;
+PATH2="usr/share/aqsis/examples/features/archives"; FILE2="bike"; F2_aqsis;
+rm bikeData.rib.gz;
+
+echo "bash occlusion.txt";
+cp /usr/share/aqsis/examples/features/occlusion/world.rib ${HOME}/;
+aqsis /usr/share/aqsis/examples/features/occlusion/occlmap.rib;
+aqsl /usr/share/aqsis/examples/features/occlusion/envlight.sl;
+PATH2="usr/share/aqsis/examples/features/occlusion"; FILE2="simple"; F2_aqsis;
+rm envlight.slx occlmap.sm shad1.shad shad2.shad softshadow.shad softshadow.zfile world.rib;
+
+echo; echo "aqsis end.";
